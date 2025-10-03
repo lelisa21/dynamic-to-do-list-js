@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const addButton = document.getElementById("add-task-btn");
   const taskList = document.getElementById("task-list");
 
-  function loadTask() {
+  function loadTasks() {
     const storedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
     storedTasks.forEach((storedTask) => {
       // storedTask should be a string
@@ -62,5 +62,5 @@ document.addEventListener("DOMContentLoaded", () => {
   addButton.addEventListener("click", () => addTask());
 
   // Load tasks
-  loadTask();
+  loadTasks();
 });
