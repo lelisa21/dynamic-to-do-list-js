@@ -18,7 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
       taskText = taskInput.value.trim();
     }
 
-    if (taskText === "") return; 
+    if (taskText === "") {
+      alert("Please add  It's Empty!");
+      return;
+    }
 
     const listElement = document.createElement("li");
     listElement.textContent = taskText;
@@ -40,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (save) {
       let storedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
-      storedTasks.push(taskText); 
+      storedTasks.push(taskText);
       localStorage.setItem("tasks", JSON.stringify(storedTasks));
     }
   }
